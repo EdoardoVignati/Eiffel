@@ -1,2 +1,2 @@
 # Eiffel
-Simple Eiffel lang example
+This is a simple example of Eiffel with its main constructs
