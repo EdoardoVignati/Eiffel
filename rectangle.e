@@ -22,7 +22,7 @@ create
 	do
 		base:=b
 		height:=h
-		print("New RECTANGLE created%N");
+		print("New RECTANGLE created");
 	end
 	feature{ANY}
 		getArea:REAL

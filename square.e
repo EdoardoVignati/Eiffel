@@ -19,7 +19,7 @@ create
 	require else size>=0
 	do
 		side:=size
-		print("New SQUARE created%N");
+		print("New SQUARE created");
 	end
 
 	feature{ANY}
