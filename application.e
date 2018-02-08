@@ -20,6 +20,7 @@ feature {NONE}
 	make
 		local
 			index:INTEGER
+			returned:DOUBLE
 		do
 			print ("%N%NLet's try Eiffel lang!%N----------------------%N%N")
 			create mySquare.make(10)
@@ -54,6 +55,15 @@ feature {NONE}
 						print("%N")
 				index:=index+1
 			end
+
+			print("%NLet's see some fractions%N")
+			print("1/10 of a RECTANGLE with base=20 and height=5 is: ")
+				-- getFraction is a feature, don't call it outside another
+				-- feature or without assigning the Result value,
+				-- it will raise a compilation error
+				io.put_double (myrectangle.getfraction (10))
+			print("%N1/0 of a RECTANGLE with base=20 and height=5 is: ")
+				returned := myrectangle.getfraction (0)
 
 		end
 

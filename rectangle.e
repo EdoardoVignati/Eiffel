@@ -14,6 +14,8 @@ create
 	feature
 		base:REAL
 		height:REAL
+		ispositive_infinity:BOOLEAN
+
 	feature{ANY}
 		make(b:REAL; h:REAL)
 	require else
@@ -40,6 +42,28 @@ create
 		ensure then
 			Result>=0
 		end
+	feature{ANY}
+		getFraction(fract:INTEGER):DOUBLE
+		local
+			retried:BOOLEAN
+		do
+
+			if not retried then
+				Result:=(base*height)/fract
+			else
+				Result:=0
+			end
+
+			ispositive_infinity:=Result.is_positive_infinity
+
+		ensure
+			Result>=0 and not ispositive_infinity
+		rescue
+			print("Caught division by zero%N")
+			retried:=true
+			retry
+		end
+
 	invariant
 		RectangleInvariant: base/=height
 		-- A polygon with base=height is a rectangle but in this case
