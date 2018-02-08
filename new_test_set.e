@@ -23,16 +23,16 @@ feature {NONE}
 
 		on_prepare
 		do
-			create mysquaretest.make(10)
+			create mySquareTest.make(10)
 		end
 
 
 feature
 
-	TEST_POLYGON
+	polygon_tests
 		do
-
-			assert ("SQUARE area is side*side", mySquareTest.getarea=100)
+			assert ("SQUARE perimeter is side*4", mySquareTest.getPerimeter=40)
+			assert ("SQUARE area is side*side", mySquareTest.getArea=100)
 		end
 feature
 	on_clean
